@@ -52,6 +52,9 @@
  *     production
  *
  * NOTE: If you change these, also change the error_reporting() code below
+ * 
+ * 如服务器是nginx，配置环境变量: fastcgi_param CI_ENV='development';
+ * 
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
@@ -304,6 +307,20 @@ switch (ENVIRONMENT)
 	}
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+    
+/*
+ * --------------------------------------------------------------------
+ * autoload
+ * --------------------------------------------------------------------
+ */
+require_once APPPATH . 'third_party/autoload.php';
+
+/*
+ * --------------------------------------------------------------------
+ * 覆盖框架的函数
+ * --------------------------------------------------------------------
+ */
+require_once APPPATH . 'core/MY_common.php';
 
 /*
  * --------------------------------------------------------------------

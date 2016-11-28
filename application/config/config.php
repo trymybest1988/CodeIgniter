@@ -78,7 +78,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'zh_cn';
 
 /*
 |--------------------------------------------------------------------------
@@ -102,7 +102,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -217,7 +217,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 8;
 
 /*
 |--------------------------------------------------------------------------
@@ -515,3 +515,16 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+/*
+ * defined HTTP_REQUEST_METHOD
+ * @author Mr.Nobody
+ */ 
+if ( ! defined('HTTP_REQUEST_METHOD_GET')) {
+    define('HTTP_REQUEST_METHOD_GET', 'GET');
+}
+if ( ! defined('HTTP_REQUEST_METHOD_POST')) {
+    define('HTTP_REQUEST_METHOD_POST', 'POST');
+}
+
